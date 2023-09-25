@@ -1,0 +1,27 @@
+.dropdownList {
+  position: absolute;
+  max-height: 127px;
+  border-radius: 8px;
+  width: 100%;
+  left:0px;
+  top:57px;
+  overflow: hidden;
+  border: 1px solid #E3E5F1;
+  background: #F7F7FA;
+  overflow-y: scroll;
+}
+
+.dropdownSkill {
+  background: #F7F7FA;
+  color: #5a6793;
+  padding: 7px 0px 7px 14px;
+  height: 38px;
+  &:hover {
+    background: #E3E5F1;
+    cursor: pointer;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}

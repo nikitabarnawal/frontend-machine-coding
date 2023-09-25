@@ -1,0 +1,1 @@
+export const AllSkills = ['HTML', 'CSS', 'Bootstrap', 'TypeScript', 'VueJs', 'Angular', 'NodeJs']

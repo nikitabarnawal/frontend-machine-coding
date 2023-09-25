@@ -1,0 +1,33 @@
+.skill {
+  display: flex;
+  width: 392px;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;   
+  border-radius: 8px;
+  background: #0D2167;
+  color: #fff;
+  img {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.input {
+  position: relative;
+  border: 1px solid #E3E5F1;
+  background: #F7F7FA;
+  input {
+    background: #F7F7FA;
+    border: none;
+    outline: none;
+    width: 80%;
+  }
+}
+
+.disable {
+  border-radius: 8px;
+  background: #E5E7EB;
+  color: #9CA3AF
+}
