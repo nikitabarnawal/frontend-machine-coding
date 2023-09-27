@@ -142,6 +142,15 @@ ul li::before {
   border: none;
   outline: none;
   background: #22262C;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.mau-list {
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .mau-text {

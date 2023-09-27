@@ -9,6 +9,11 @@ interface PriceCardComponentProps {
 const PriceCardComponent = ({ details }: PriceCardComponentProps) => {
   const [selectedValue, setSelectedValue] = useState('2500');
 
+  const getPrice = () => {
+    if (selectedValue === '2500') return '$99';
+    return '$150';
+  }
+
   const handleMaus = (value: string) => setSelectedValue(value);
 
   const classNames = details.type === 'Pro' ? 'proCard' : details.type === 'Starter' ? 'starterCard' : 'enterPriseCard'
@@ -16,7 +21,7 @@ const PriceCardComponent = ({ details }: PriceCardComponentProps) => {
     <div className={classNames}>
       <p className="type">{details.type}</p>
       <div className="price">
-        <span className="price1">{details?.isPrice && details?.type === 'Pro' ? selectedValue : details.isPrice ? details?.price : details?.priceText}</span>
+        <span className="price1">{details?.isPrice && details?.type === 'Pro' ? getPrice() : details.isPrice ? details?.price : details?.priceText}</span>
         {details.type === 'Pro' && <span className='monthText'>/month</span>}
       </div>
       {
@@ -24,7 +29,7 @@ const PriceCardComponent = ({ details }: PriceCardComponentProps) => {
           {
             details.type === 'Pro' && <div className='select-maus'>
               <select className='maus' onChange={(e) => handleMaus(e.target.value)}>
-                {details?.priceMetaData?.map((data, index) => <option value={data.MAUs}>{data.MAUs} MAUs</option>)}
+                {details?.priceMetaData?.map((data, index) => <option className='mau-list' value={data.MAUs}>{data.MAUs} MAUs</option>)}
               </select>
 
             </div>

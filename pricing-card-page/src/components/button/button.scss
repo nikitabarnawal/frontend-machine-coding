@@ -9,6 +9,9 @@
   font-weight: 600;
   line-height: normal;
   border-radius: 0.25rem;
+  &:hover {
+    cursor: pointer;
+  }
 }
 .primary {
   background: #BC1E4A;
