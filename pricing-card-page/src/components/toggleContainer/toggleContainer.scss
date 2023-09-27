@@ -1,0 +1,17 @@
+.toggleContainer {
+  display: flex;
+  gap:0.25rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:2.5rem;
+}
+  
+.toggle-text {
+  color: #FFF;
+  text-align: right;
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

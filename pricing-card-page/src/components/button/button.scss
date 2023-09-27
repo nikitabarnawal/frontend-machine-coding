@@ -1,0 +1,20 @@
+.primary, .secondary {
+  width: 15.1875rem;
+  height: 3.375rem;
+  color: #FFF;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 0.25rem;
+}
+.primary {
+  background: #BC1E4A;
+}
+
+.secondary {
+  background: #22262C;
+  border: 1px solid #BC1E4A;
+}
