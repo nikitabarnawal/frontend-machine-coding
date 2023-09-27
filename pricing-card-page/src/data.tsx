@@ -6,7 +6,9 @@ export const PriceDetails: Array<PriceList> = [
     type: 'Starter',
     isPrice: true,
     price: '$19',
-    metaData: ['500 MAUs', '3projects', 'Unlimited guides', 'Unlimited flows', 'Unlimited branded themes', 'Email support']
+    metaData: ['500 MAUs', '3projects', 'Unlimited guides', 'Unlimited flows', 'Unlimited branded themes', 'Email support'],
+    isSelectUser: false,
+    isActive: false,
   },
   {
     id: 2,
@@ -14,6 +16,8 @@ export const PriceDetails: Array<PriceList> = [
     isPrice: true,
     price: '$99',
     metaData: ['All starter features, plus:', 'Unlimited projects', 'Unlimited fully customizable themes', 'A dedicated Customer Success Manager'],
+    isSelectUser: true,
+    isActive: true,
     priceMetaData: [
       {
         price: '$99',
@@ -32,5 +36,7 @@ export const PriceDetails: Array<PriceList> = [
     isPrice: false,
     priceText: `Let's Talk!`,
     metaData: ['All Pro features', 'Unlimited MAUS', 'Dedicated environment', 'Enterprise account administration', 'Premium support and services'],
+    isSelectUser: false,
+    isActive: false
   }
 ]

@@ -4,47 +4,63 @@ import './priceCard.scss';
 import { PriceList } from "../../type";
 
 interface PriceCardComponentProps {
-  details: PriceList
+  details: PriceList;
+  initialValue: string;
+  isMonthlySelected: boolean;
+  handleClick: () => void;
 }
-const PriceCardComponent = ({ details }: PriceCardComponentProps) => {
-  const [selectedValue, setSelectedValue] = useState('2500');
+const PriceCardComponent = ({ details, isMonthlySelected, initialValue, handleClick }: PriceCardComponentProps) => {
+  const [selectedValue, setSelectedValue] = useState(initialValue);
+
+  const { type, isPrice, price, metaData, priceMetaData, isActive, priceText, isSelectUser } = details;
+
+  const handleSelecteMaus = (value: string) => {
+    setSelectedValue(value)
+  }
 
   const getPrice = () => {
     if (selectedValue === '2500') return '$99';
     return '$150';
   }
 
-  const handleMaus = (value: string) => setSelectedValue(value);
+  const classNames = isPrice ? 'priceCard' : 'enterPriseCard';
 
-  const classNames = details.type === 'Pro' ? 'proCard' : details.type === 'Starter' ? 'starterCard' : 'enterPriseCard'
+  const getPriceLabel = () => {
+    if (isSelectUser) {
+      return getPrice();
+    }
+    if (isPrice) {
+      return price;
+    }
+    return priceText;
+  }
+
   return (
     <div className={classNames}>
-      <p className="type">{details.type}</p>
+      <p className="type">{type}</p>
       <div className="price">
-        <span className="price1">{details?.isPrice && details?.type === 'Pro' ? getPrice() : details.isPrice ? details?.price : details?.priceText}</span>
-        {details.type === 'Pro' && <span className='monthText'>/month</span>}
+        <span>{getPriceLabel()}</span>
+        {isSelectUser && <span className='month-year-text'>{isMonthlySelected ? '/month' : '/year'}</span>}
       </div>
       {
-        <>
-          {
-            details.type === 'Pro' && <div className='select-maus'>
-              <select className='maus' onChange={(e) => handleMaus(e.target.value)}>
-                {details?.priceMetaData?.map((data, index) => <option className='mau-list' value={data.MAUs}>{data.MAUs} MAUs</option>)}
-              </select>
 
-            </div>
-          }
-          {
-            details.type === 'Pro' && <div className='mau-text'>Monthly active users</div>
-          }
-        </>
+        isSelectUser && <div className='dropdown-maus'>
+          <div className='select-maus'>
+            <select className='maus' onChange={(e) => handleSelecteMaus(e.target.value)}>
+              {priceMetaData?.map((data, index) => <option className='mau-list' key={index} value={data.MAUs}>{data.MAUs} MAUs</option>)}
+            </select>
+
+          </div>
+          <div className='mau-text'>{isMonthlySelected ? 'Monthly active users' : 'Yearly active users'}</div>
+        </div>
+
       }
       <ul className="featList">
         {
-          details?.metaData.map((feat, index) => <li className='feature'>{feat}</li>)
+          metaData?.map((feat, index) => <li className='feature'>{feat}</li>)
         }
       </ul>
-      <Button variant={details.type === 'Pro' ? 'primary' : 'secondary'} context="Choose Plan" />
+      <Button variant={isActive ? 'primary' : 'secondary'} context={!isPrice ? 'Contact Us' : 'Choose Plan'} handleClick={handleClick} />
 
     </div>
   )

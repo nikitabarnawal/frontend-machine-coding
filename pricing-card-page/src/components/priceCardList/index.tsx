@@ -3,10 +3,20 @@ import PriceCardComponent from "../priceCardComponent";
 import { PriceDetails } from "../../data";
 import './priceCard.scss';
 
-const PriceCardList = () => {
+interface PriceCardListProps {
+  isMonthlySelected: boolean;
+  handleClick: () => void;
+}
+
+const PriceCardList = ({ isMonthlySelected, handleClick }: PriceCardListProps) => {
+
   return (
     <div className="priceCardList">
-      {PriceDetails.map((priceData, index) => <PriceCardComponent key={priceData.id} details={priceData} />)}
+      {
+        PriceDetails.map((priceData, index) =>
+          <PriceCardComponent key={priceData.id} details={priceData} isMonthlySelected={isMonthlySelected} initialValue='2500' handleClick={handleClick} />
+        )
+      }
     </div>
   )
 }

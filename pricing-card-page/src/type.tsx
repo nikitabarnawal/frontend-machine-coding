@@ -6,4 +6,6 @@ export interface PriceList {
   metaData: Array<string>,
   priceMetaData?: { price: string, MAUs: string }[]
   priceText?: string;
+  isSelectUser: boolean;
+  isActive: boolean
 }

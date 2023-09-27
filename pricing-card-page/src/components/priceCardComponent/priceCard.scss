@@ -1,23 +1,14 @@
-.proCard, .starterCard, .enterPriseCard { 
-  padding-top:2.31rem;
+.priceCard, .enterPriseCard { 
+  padding:2.31rem 3rem 2.19rem 3rem;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
   flex-direction: column;
   color: #fff;
   border-radius: 0.625rem;
   background: #22262C;
-  padding-bottom:2.19rem;
-}
-
-.proCard {
-  padding-left:2.44rem;
-  padding-right:2.44rem;
-  align-items: center;
-}
-
-.starterCard, .enterPriseCard {
-  padding-left: 4.37rem;
-  padding-right: 3.88rem;
+  width: 23.4375rem;
+  box-sizing: border-box;
 }
 
 .type {
@@ -41,16 +32,7 @@
   line-height: normal;
 }
 
-.starterCard, .proCard {
-  .type {
-    margin-bottom: 1.12rem;
-  }
-}
-
 .enterPriseCard {
-  .type {
-    margin-bottom:2.5rem;
-  }
   .price {
     color: #FFF;
     text-align: center;
@@ -62,28 +44,12 @@
   }
 }
 
-
-.starterCard {
-  .price {
-    margin-bottom:4.12rem;
-  }
-}
-
-.proCard {
-  .price {
-    margin-bottom: 1.25rem;
-  }
-}
-
-.enterPriseCard {
-  .price {
-    margin-bottom: 6.94rem;
-  }
-}
-
 .featList {
+  display:flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 3rem;
   margin-bottom: 3rem;
-  margin-left:1rem;
 }
 
 .feature {
@@ -105,10 +71,9 @@ ul li::before {
   font-weight: bold;
   display: inline-block;
   width: 1em;
-  margin-left: -1.5em;
 }
 
-.monthText {
+.month-year-text {
   color: #FFF;
   font-family: Open Sans;
   font-size: 1.375rem;
@@ -117,18 +82,22 @@ ul li::before {
   line-height: normal;
 }
 
+.dropdown-maus {
+  width: 100%;
+}
+
 .select-maus {
   display:flex;
   align-items:center;
   justify-content: center;
   border-radius: 0.1875rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  width: 18.5625rem;
   height: 4.25rem;
   padding-left: 2.97rem;
   padding-right: 1.81rem;
   box-sizing: border-box;
   margin-bottom: 0.5rem;
+  width: 100%;
 }
 
 .maus {
@@ -160,7 +129,6 @@ ul li::before {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 1.94rem;
   width: 100%;
   text-align: left;
   margin-left: 2rem;

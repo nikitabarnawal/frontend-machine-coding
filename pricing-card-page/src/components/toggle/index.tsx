@@ -1,10 +1,15 @@
 import React from "react";
 import './toggle.scss';
 
-const Toggle = () => {
+interface ToggleParams {
+  isMonthlySelected: Boolean;
+  handleToggleChange: () => void;
+}
+
+const Toggle = ({ isMonthlySelected, handleToggleChange }: ToggleParams) => {
   return (
-    <label className='switch'>
-      <input type='checkbox' />
+    <label className='switch' onChange={handleToggleChange}>
+      <input type='checkbox' checked={Boolean(isMonthlySelected)} />
       <span className="slider"></span>
     </label>
   )
