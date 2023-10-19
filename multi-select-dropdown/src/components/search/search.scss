@@ -1,0 +1,62 @@
+.search-container {
+  max-width: 37.5rem;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #11103c;
+  background: #fff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height:3rem;
+}
+
+.search-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap:0.25rem;
+  height: 1.3125rem;
+}
+
+input { 
+  outline: none;
+  border: none;
+  margin-left: 0.25rem;
+  flex-grow: 0;
+}
+
+.selected-value {
+  display: flex;
+  justify-content: center;
+  border-radius: 0.25rem;
+  background: #EDEFFB;
+  padding:0rem 0.125rem 0rem 0.25rem;
+  img {
+    margin-left: 0.1rem;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+//width
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+//track
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+//handle
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+//handle on hover
+::webkit-scrollbar-thumb:hover {
+  background: #555;;
+}

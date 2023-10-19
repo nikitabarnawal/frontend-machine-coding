@@ -1,0 +1,8 @@
+{
+  "short_name": "Multi-select-dropdown",
+  "name": "Select multiple values",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
